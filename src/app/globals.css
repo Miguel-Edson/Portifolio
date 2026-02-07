@@ -1,10 +1,5 @@
 @import "tailwindcss";
 
-/* 1. Definições Básicas */
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
 @theme inline {
   --color-background: var(--background);
@@ -21,12 +16,13 @@
 }
 
 @layer utilities {
+
   .text-display {
     font-family: var(--font-k2d);
     font-weight: 400;
     line-height: 1.1;
-    font-size: 40px;
-    @media (min-width: 768px) {
+    font-size: 40px;              /* Mobile */
+    @media (min-width: 768px) {   /* Desktop */
       font-size: 64px;
     }
   }
@@ -38,11 +34,6 @@
     @media (min-width: 768px) {
       font-size: 32px;
     }
-  }
-  
-  /* Alias para manter compatibilidade */
-  .text-sessao {
-    @apply text-titulo;
   }
 
   .text-destaque {
@@ -77,56 +68,53 @@
   }
 }
 
-/* --- EFEITOS DE CHUVA (CORRIGIDO) --- */
+/* --- globals.css (SUBSTITUA o final do arquivo por isto) --- */
 
-/* 1. Configuração Base e Degradê */
+/* 1. Configuração Base */
 .rain-container {
   position: relative;
   overflow: hidden;
-  /* Degradê restaurado para dar profundidade */
-  background: linear-gradient(to bottom, #021E23, #1C8AA2) !important;
+  background: linear-gradient(to bottom, #0D4C59, #0D4C59);
 }
 
 @keyframes rain-fall {
   to {
-    transform: translateY(120vh);
+    transform: translateY(110vh); /* Caindo um pouco mais para garantir */
   }
 }
 
-/* 2. As Gotas */
+/* 2. As Gotas (Adicionado border-radius na base para arredondar) */
 /* Camada 1 - Perto */
 .rain-layer::before {
   content: "";
   position: absolute;
-  width: 2px;
-  height: 80px; /* Altura maior para parecer rápido */
+  width: 3px; /* Um pouco mais grossa */
+  height: 60px;
   background: var(--color-isabelline);
-  color: var(--color-isabelline); /* <--- A CORREÇÃO MÁGICA (Aplica cor na sombra) */
+  border-radius: 0 0 50% 50%; /* <-- Arredonda a ponta de baixo */
   opacity: 0.4;
-  top: -120px;
-  /* Sombras */
+  top: -100px;
   box-shadow: 
     10vw 10vh 0px -1px, 30vw 2vh 0px -1px, 50vw 15vh 0px -1px, 70vw 30vh 0px -1px, 90vw 10vh 0px -1px,
     15vw 40vh 0px -1px, 35vw 50vh 0px -1px, 55vw 60vh 0px -1px, 75vw 70vh 0px -1px, 95vw 80vh 0px -1px;
-  animation: rain-fall 1.0s linear infinite;
+  animation: rain-fall 1.3s linear infinite;
 }
 
 /* Camada 2 - Médio */
 .rain-layer::after {
   content: "";
   position: absolute;
-  width: 1px;
-  height: 50px;
+  width: 2px;
+  height: 40px;
   background: var(--color-isabelline);
-  color: var(--color-isabelline); /* <--- A CORREÇÃO MÁGICA */
+  border-radius: 0 0 50% 50%; /* <-- Arredonda a ponta de baixo */
   opacity: 0.3;
   top: -100px;
   left: 5%;
-  /* Sombras */
   box-shadow: 
     5vw 5vh 0px 0px, 25vw 15vh 0px 0px, 45vw 25vh 0px 0px, 65vw 35vh 0px 0px, 85vw 45vh 0px 0px,
     10vw 55vh 0px 0px, 30vw 65vh 0px 0px, 50vw 75vh 0px 0px, 70vw 85vh 0px 0px, 90vw 95vh 0px 0px;
-  animation: rain-fall 1.8s linear infinite;
+  animation: rain-fall 2s linear infinite;
 }
 
 /* Camada 3 - Longe */
@@ -134,69 +122,27 @@
     content: "";
     position: absolute;
     width: 1px;
-    height: 30px;
+    height: 20px;
     background: var(--color-isabelline);
-    color: var(--color-isabelline); /* <--- A CORREÇÃO MÁGICA */
-    opacity: 0.15;
+    opacity: 0.2;
     top: -100px;
     left: -10%;
     box-shadow: 15vw 5vh 0px, 35vw 25vh 0px, 55vw 45vh 0px, 75vw 65vh 0px, 95vw 85vh 0px;
-    animation: rain-fall 3s linear infinite;
+    animation: rain-fall 3.5s linear infinite;
 }
 
-/* --- Animação de Respingo no Chão --- */
+/* --- NOVO: Animação de Respingo no Chão --- */
 
 @keyframes splash-anim {
   0% {
     opacity: 1;
-    transform: scale(0) rotateX(70deg);
+    transform: scale(0) rotateX(70deg); /* Começa pequeno e achatado */
   }
-  70% {
-    opacity: 0.6;
+  60% {
+    opacity: 0.5;
   }
   100% {
     opacity: 0;
-    transform: scale(3) rotateX(70deg);
+    transform: scale(3) rotateX(70deg); /* Cresce e desaparece */
   }
-}
-
-.splash-container {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  pointer-events: none;
-  z-index: 5;
-  perspective: 600px;
-}
-
-.splash-container::before, .splash-container::after {
-  content: "";
-  position: absolute;
-  bottom: 20px;
-  width: 15px;
-  height: 15px;
-  border: 2px solid var(--color-isabelline);
-  border-radius: 50%;
-  opacity: 0;
-  box-shadow: 
-    10vw 2px 0 0, 30vw -2px 0 0, 50vw 5px 0 0, 70vw 0px 0 0, 90vw 3px 0 0,
-    20vw 8px 0 0, 40vw 1px 0 0, 60vw -5px 0 0, 80vw 4px 0 0;
-}
-
-.splash-container::before {
-  animation: splash-anim 1s linear infinite;
-}
-
-.splash-container::after {
-  left: 15%;
-  animation: splash-anim 1.4s linear infinite 0.5s;
-}
-
-/* Estilos Globais */
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
