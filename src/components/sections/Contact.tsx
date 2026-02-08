@@ -30,7 +30,7 @@ export default function Contact() {
       // Ícones do React-Icons aceitam 'size' e 'className' nativamente
       icon: <FaInstagram size={28} />,
       action: "link",
-      url: "https://instagram.com/seu-usuario",
+      url: "https://www.instagram.com/miguel_edson__/",
       color: "hover:bg-gradient-to-tr hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#FCAF45] hover:text-white hover:border-transparent",
       desc: "Bastidores & Lifestyle"
     },
@@ -84,10 +84,10 @@ export default function Contact() {
         
         {/* Cabeçalho */}
         <div className="mb-12 text-left">
-          <span className="text-subtitulo text-caribbean block mb-2">
+          <span className="text-complemento text-caribbean block mb-2">
             / Contato
           </span>
-          <h2 className="text-display text-caribbean mb-4">
+          <h2 className="text-titulo text-caribbean mb-4">
             Vamos conversar?
           </h2>
           <p className="text-paragrafo text-gray-600 max-w-5xl">

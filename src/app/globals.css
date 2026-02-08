@@ -1,13 +1,16 @@
 @import "tailwindcss";
 
+/* Configuração de Scroll Suave Global */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px; /* Desconto da Navbar */
+}
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-
   --font-inter: var(--font-inter);
   --font-k2d: var(--font-k2d);
-
   --color-orange-peel: #FFA62B;
   --color-isabelline: #EDE7E3;
   --color-sky-blue: #82C0CC;
@@ -16,51 +19,37 @@
 }
 
 @layer utilities {
-
   .text-display {
     font-family: var(--font-k2d);
     font-weight: 400;
     line-height: 1.1;
-    font-size: 40px;              /* Mobile */
-    @media (min-width: 768px) {   /* Desktop */
-      font-size: 64px;
-    }
+    font-size: 40px;
+    @media (min-width: 768px) { font-size: 64px; }
   }
-
   .text-titulo {
     font-family: var(--font-k2d);
     font-weight: 400;
     font-size: 24px;
-    @media (min-width: 768px) {
-      font-size: 32px;
-    }
+    @media (min-width: 768px) { font-size: 32px; }
   }
-
   .text-destaque {
     font-family: var(--font-inter);
     font-weight: 700;
     font-size: 18px;
-    @media (min-width: 768px) {
-      font-size: 22px;
-    }
+    @media (min-width: 768px) { font-size: 22px; }
   }
-
   .text-complemento {
     font-family: var(--font-k2d);
     font-weight: 500;
     font-size: 18px;
-    @media (min-width: 768px) {
-      font-size: 22px;
-    }
+    @media (min-width: 768px) { font-size: 22px; }
   }
-
   .text-paragrafo {
     font-family: var(--font-inter);
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
   }
-
   .text-subtitulo {
     font-family: var(--font-inter);
     font-weight: 300;
@@ -68,9 +57,8 @@
   }
 }
 
-/* --- globals.css (SUBSTITUA o final do arquivo por isto) --- */
+/* --- CHUVA (CORRIGIDO: COR BRANCA FORÇADA) --- */
 
-/* 1. Configuração Base */
 .rain-container {
   position: relative;
   overflow: hidden;
@@ -79,19 +67,22 @@
 
 @keyframes rain-fall {
   to {
-    transform: translateY(110vh); /* Caindo um pouco mais para garantir */
+    transform: translateY(110vh);
   }
 }
 
-/* 2. As Gotas (Adicionado border-radius na base para arredondar) */
 /* Camada 1 - Perto */
 .rain-layer::before {
   content: "";
   position: absolute;
-  width: 3px; /* Um pouco mais grossa */
+  width: 3px;
   height: 60px;
-  background: var(--color-isabelline);
-  border-radius: 0 0 50% 50%; /* <-- Arredonda a ponta de baixo */
+  background: #EDE7E3; /* Cor da gota principal */
+  
+  /* --- O SEGREDO ESTÁ AQUI EMBAIXO --- */
+  color: #EDE7E3; /* ISSO PINTA AS SOMBRAS DE BRANCO */
+  
+  border-radius: 0 0 50% 50%;
   opacity: 0.4;
   top: -100px;
   box-shadow: 
@@ -106,8 +97,12 @@
   position: absolute;
   width: 2px;
   height: 40px;
-  background: var(--color-isabelline);
-  border-radius: 0 0 50% 50%; /* <-- Arredonda a ponta de baixo */
+  background: #EDE7E3;
+  
+  /* --- CORRIGIDO AQUI TAMBÉM --- */
+  color: #EDE7E3; 
+  
+  border-radius: 0 0 50% 50%;
   opacity: 0.3;
   top: -100px;
   left: 5%;
@@ -123,7 +118,11 @@
     position: absolute;
     width: 1px;
     height: 20px;
-    background: var(--color-isabelline);
+    background: #EDE7E3;
+    
+    /* --- CORRIGIDO AQUI TAMBÉM --- */
+    color: #EDE7E3;
+    
     opacity: 0.2;
     top: -100px;
     left: -10%;
@@ -131,18 +130,17 @@
     animation: rain-fall 3.5s linear infinite;
 }
 
-/* --- NOVO: Animação de Respingo no Chão --- */
-
+/* --- Respingo no Chão --- */
 @keyframes splash-anim {
   0% {
     opacity: 1;
-    transform: scale(0) rotateX(70deg); /* Começa pequeno e achatado */
+    transform: scale(0) rotateX(70deg);
   }
   60% {
     opacity: 0.5;
   }
   100% {
     opacity: 0;
-    transform: scale(3) rotateX(70deg); /* Cresce e desaparece */
+    transform: scale(3) rotateX(70deg);
   }
 }

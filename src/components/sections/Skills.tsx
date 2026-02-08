@@ -155,10 +155,10 @@ export default function Skills() {
       
       {/* --- CABEÇALHO --- */}
       <div className="w-full max-w-6xl mb-12 text-center md:text-left">
-        <span className="text-subtitulo text-sky-blue block mb-2">
+        <span className="text-complemento text-sky-blue block mb-2">
           / Competências
         </span>
-        <h2 className="text-display text-isabelline">
+        <h2 className="text-titulo text-isabelline">
           Habilidades & Stack
         </h2>
         <p className="text-paragrafo text-gray-300 mt-4 max-w-2xl">
@@ -168,7 +168,7 @@ export default function Skills() {
 
       <div className="w-full max-w-6xl flex items-center gap-4 mb-12">
         <div className="h-px flex-1 bg-white/20"></div>
-        <span className="text-sky-blue font-k2d text-xl uppercase tracking-widest">Ferramentas & Tecnologias</span>
+        <span className="text-sky-blue text-destaque uppercase tracking-widest">Ferramentas & Tecnologias</span>
         <div className="h-px flex-1 bg-white/20"></div>
       </div>
 
@@ -222,7 +222,7 @@ export default function Skills() {
       {/* --- DIVISOR VISUAL --- */}
       <div className="w-full max-w-6xl flex items-center gap-4 mb-12">
         <div className="h-px flex-1 bg-white/20"></div>
-        <span className="text-sky-blue font-k2d text-xl uppercase tracking-widest">Áreas de Atuação</span>
+        <span className="text-sky-blue text-destaque uppercase tracking-widest">Áreas de Atuação</span>
         <div className="h-px flex-1 bg-white/20"></div>
       </div>
 
