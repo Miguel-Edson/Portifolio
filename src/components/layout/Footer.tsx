@@ -15,10 +15,10 @@ export default function Footer() {
   return (
     <footer className="w-full bg-[#105D6A] text-white py-12 md:py-16">
       
-      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-10 md:gap-4">
+      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center md:items-stretch gap-10 md:gap-4">
         
-        {/* 1. Logo (Alinhado à ESQUERDA no PC) */}
-        <div className="flex-1 flex justify-center md:justify-start w-full md:w-auto">
+        {/* Logo */}
+        <div className="flex-1 flex justify-center md:justify-start">
           <div className="relative w-40 h-40 md:w-48 md:h-48 hover:scale-105 transition-transform duration-300">
             <Image 
               src="/assets/logo.svg" 
@@ -29,9 +29,9 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* 2. Coluna Sessões (CENTRALIZADO no PC) */}
-        <div className="flex-1 flex flex-col items-center gap-4 text-center">
-          <h3 className="font-k2d text-2xl md:text-3xl font-bold mb-2">Sessões</h3>
+        {/* Sessions */}
+        <div className="flex-1 flex flex-col items-center text-center">
+          <h3 className="text-destaque mb-6 font-bold">Sessões</h3>
           <nav className="flex flex-col gap-3 text-base md:text-lg text-gray-200">
             {["home", "sobre", "projetos", "habilidades", "contatos"].map((item) => (
               <button 
@@ -45,10 +45,10 @@ export default function Footer() {
           </nav>
         </div>
 
-        {/* 3. Coluna Contatos (Alinhado à DIREITA no PC) */}
-        <div className="flex-1 flex flex-col items-center md:items-end gap-4 text-center md:text-right">
-          <h3 className="font-k2d text-2xl md:text-3xl font-bold mb-2">Contatos</h3>
-          <nav className="flex flex-col gap-3 text-base md:text-lg text-gray-200">
+        {/* COntacts */}
+        <div className="flex-1 flex flex-col items-center md:items-end text-center md:text-right">
+          <h3 className="text-destaque mb-6 font-bold">Contatos</h3>
+          <nav className="flex flex-col gap-4 text-base md:text-lg text-gray-200">
             <a href="https://linkedin.com/in/seu-usuario" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-orange-peel hover:-translate-x-1 transition-all justify-center md:justify-end">
               LinkedIn <FaLinkedin />
             </a>

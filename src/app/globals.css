@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
-/* Configuração de Scroll Suave Global */
+
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 120px; /* Desconto da Navbar */
+  scroll-padding-top: 120px; 
 }
 
 @theme inline {
@@ -57,7 +57,7 @@ html {
   }
 }
 
-/* --- CHUVA (CORRIGIDO: COR BRANCA FORÇADA) --- */
+/* Rain Effect */
 
 .rain-container {
   position: relative;
@@ -71,16 +71,15 @@ html {
   }
 }
 
-/* Camada 1 - Perto */
+/* Close */
 .rain-layer::before {
   content: "";
   position: absolute;
   width: 3px;
   height: 60px;
-  background: #EDE7E3; /* Cor da gota principal */
-  
-  /* --- O SEGREDO ESTÁ AQUI EMBAIXO --- */
-  color: #EDE7E3; /* ISSO PINTA AS SOMBRAS DE BRANCO */
+  background: #EDE7E3; 
+ 
+  color: #EDE7E3; 
   
   border-radius: 0 0 50% 50%;
   opacity: 0.4;
@@ -91,15 +90,14 @@ html {
   animation: rain-fall 1.3s linear infinite;
 }
 
-/* Camada 2 - Médio */
+/* Medium */
 .rain-layer::after {
   content: "";
   position: absolute;
   width: 2px;
   height: 40px;
   background: #EDE7E3;
-  
-  /* --- CORRIGIDO AQUI TAMBÉM --- */
+
   color: #EDE7E3; 
   
   border-radius: 0 0 50% 50%;
@@ -112,15 +110,13 @@ html {
   animation: rain-fall 2s linear infinite;
 }
 
-/* Camada 3 - Longe */
+/* Far */
 .rain-layer-far::before {
     content: "";
     position: absolute;
     width: 1px;
     height: 20px;
     background: #EDE7E3;
-    
-    /* --- CORRIGIDO AQUI TAMBÉM --- */
     color: #EDE7E3;
     
     opacity: 0.2;
@@ -128,19 +124,4 @@ html {
     left: -10%;
     box-shadow: 15vw 5vh 0px, 35vw 25vh 0px, 55vw 45vh 0px, 75vw 65vh 0px, 95vw 85vh 0px;
     animation: rain-fall 3.5s linear infinite;
-}
-
-/* --- Respingo no Chão --- */
-@keyframes splash-anim {
-  0% {
-    opacity: 1;
-    transform: scale(0) rotateX(70deg);
-  }
-  60% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 0;
-    transform: scale(3) rotateX(70deg);
-  }
 }

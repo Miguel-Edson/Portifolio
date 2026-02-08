@@ -10,7 +10,6 @@ const inter = Inter({
   display: "swap",
 });
 
-// 3. Configuramos a K2D (Títulos)
 const k2d = K2D({
   weight: ["400", "500"],
   subsets: ["latin"],

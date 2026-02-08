@@ -1,22 +1,21 @@
 "use client";
 
 import { useState } from "react";
-// Importando ícones REAIS e OFICIAIS das marcas
 import { 
   FaInstagram, 
   FaWhatsapp, 
   FaBehance, 
   FaLinkedin, 
   FaGithub, 
-  FaEnvelope, // E-mail icon
-  FaCheck,    // Check icon
-  FaRegCopy   // Copy icon
-} from "react-icons/fa"; // Usando o pacote FontAwesome 5 (Padrão de mercado)
+  FaEnvelope, 
+  FaCheck,    
+  FaRegCopy  
+} from "react-icons/fa";
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
-  const myEmail = "seu.email@exemplo.com"; // <--- SEU EMAIL
-  const myNumber = "5588999999999"; // <--- SEU WHATSAPP (Apenas números)
+  const myEmail = "migueledson.11@gmail.com";
+  const myNumber = "5588996842708";
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(myEmail);
@@ -27,12 +26,11 @@ export default function Contact() {
   const contacts = [
     {
       name: "Instagram",
-      // Ícones do React-Icons aceitam 'size' e 'className' nativamente
       icon: <FaInstagram size={28} />,
       action: "link",
       url: "https://www.instagram.com/miguel_edson__/",
       color: "hover:bg-gradient-to-tr hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#FCAF45] hover:text-white hover:border-transparent",
-      desc: "Bastidores & Lifestyle"
+      desc: "Bastidores"
     },
     {
       name: "E-mail",
@@ -54,7 +52,7 @@ export default function Contact() {
       name: "Behance",
       icon: <FaBehance size={28} />,
       action: "link",
-      url: "https://behance.net/seu-usuario",
+      url: "https://www.behance.net/miguel_lima_dev",
       color: "hover:bg-[#1769ff] hover:text-white hover:border-[#1769ff]",
       desc: "Portfólio de Design"
     },
@@ -62,7 +60,7 @@ export default function Contact() {
       name: "LinkedIn",
       icon: <FaLinkedin size={28} />,
       action: "link",
-      url: "https://linkedin.com/in/seu-usuario",
+      url: "www.linkedin.com/in/miguel-edson-a53a99283",
       color: "hover:bg-[#0077B5] hover:text-white hover:border-[#0077B5]",
       desc: "Conexão Profissional"
     },
@@ -70,7 +68,7 @@ export default function Contact() {
       name: "GitHub",
       icon: <FaGithub size={28} />,
       action: "link",
-      url: "https://github.com/seu-usuario",
+      url: "https://github.com/Miguel-Edson",
       color: "hover:bg-[#181717] hover:text-white hover:border-[#181717]",
       desc: "Repositórios de Código"
     },
@@ -79,27 +77,26 @@ export default function Contact() {
   return (
     <section id="contatos" className="w-full py-20 px-6 bg-isabelline flex flex-col items-center">
       
-      {/* Container Principal */}
+      {/* Main */}
       <div className="w-full max-w-6xl">
         
-        {/* Cabeçalho */}
+        {/* Header */}
         <div className="mb-12 text-left">
-          <span className="text-complemento text-caribbean block mb-2">
+          <span className="text-complemento text-caribbean block">
             / Contato
           </span>
           <h2 className="text-titulo text-caribbean mb-4">
             Vamos conversar?
           </h2>
           <p className="text-paragrafo text-gray-600 max-w-5xl">
-            Sinta-se à vontade para entrar em contato através das redes abaixo. Estou sempre disponível para novos projetos e parcerias.
+            Sinta-se à vontade para entrar em contato através das redes abaixo. Estou sempre disponível para novos projetos e oportunidades.
           </p>
         </div>
 
-        {/* Grid de Cards */}
+        {/* Cards GRID */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           
           {contacts.map((item) => {
-            // Lógica para o botão de Copiar (Email)
             if (item.action === "copy") {
               return (
                 <button
@@ -126,7 +123,6 @@ export default function Contact() {
               );
             }
 
-            // Lógica para Links Normais
             return (
               <a
                 key={item.name}

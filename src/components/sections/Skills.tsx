@@ -22,9 +22,9 @@ const skillGroups = [
     icon: <Code2 size={32} />,
     description: "A base lógica para construir soluções robustas.",
     skills: [
-      { name: "JavaScript", level: 95 },
-      { name: "C++", level: 90 },
-      { name: "Python", level: 85 },
+      { name: "JavaScript", level: 70 },
+      { name: "C++", level: 60 },
+      { name: "Python", level: 50 },
     ]
   },
   {
@@ -33,10 +33,11 @@ const skillGroups = [
     icon: <Layout size={32} />,
     description: "Tecnologias para interfaces modernas e responsivas.",
     skills: [
-      { name: "Next.js", level: 90 },
-      { name: "Tailwind CSS", level: 95 },
-      { name: "HTML5", level: 100 },
-      { name: "CSS3", level: 95 },
+      { name: "Next.js", level: 80 },
+      { name: "React.js", level: 80 },
+      { name: "Tailwind CSS", level: 80 },
+      { name: "HTML5", level: 90 },
+      { name: "CSS3", level: 85 },
     ]
   },
   {
@@ -45,9 +46,9 @@ const skillGroups = [
     icon: <Cpu size={32} />,
     description: "Integração entre software e mundo físico.",
     skills: [
-      { name: "Arduino", level: 95 },
-      { name: "Sensores & Atuadores", level: 90 },
-      { name: "Robótica", level: 85 },
+      { name: "Arduino", level: 80 },
+      { name: "Sensores & Atuadores", level: 65 },
+      { name: "Robótica", level: 70 },
     ]
   },
   {
@@ -57,8 +58,8 @@ const skillGroups = [
     description: "Prototipagem e criação visual.",
     skills: [
       { name: "Figma", level: 90 },
-      { name: "Canva", level: 95 },
-      { name: "Photoshop", level: 80 },
+      { name: "Canva", level: 90 },
+      { name: "Photoshop", level: 60 },
       { name: "Behance", level: 75 },
     ]
   },
@@ -68,8 +69,8 @@ const skillGroups = [
     icon: <GitBranch size={32} />,
     description: "Ferramentas essenciais para fluxo de trabalho.",
     skills: [
-      { name: "Git", level: 90 },
-      { name: "GitHub", level: 90 },
+      { name: "Git", level: 80 },
+      { name: "GitHub", level: 80 },
     ]
   },
   {
@@ -79,12 +80,12 @@ const skillGroups = [
     description: "Comunicação global.",
     skills: [
       { name: "Português", level: 100 },
-      { name: "Inglês", level: 80 },
+      { name: "Inglês - C1", level: 75 },
     ]
   },
 ];
 
-// --- PARTE 2: ÁREAS DE ATUAÇÃO (Texto da Imagem) ---
+{/* Competencies */}
 const competencies = [
   {
     title: "Desenvolvimento Front-end",
@@ -153,9 +154,9 @@ export default function Skills() {
       }}
     >
       
-      {/* --- CABEÇALHO --- */}
+      {/* --- Header --- */}
       <div className="w-full max-w-6xl mb-12 text-center md:text-left">
-        <span className="text-complemento text-sky-blue block mb-2">
+        <span className="text-complemento text-isabelline block">
           / Competências
         </span>
         <h2 className="text-titulo text-isabelline">
@@ -172,8 +173,8 @@ export default function Skills() {
         <div className="h-px flex-1 bg-white/20"></div>
       </div>
 
-      {/* --- PARTE 1: FERRAMENTAS (Accordions) --- */}
-      <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
+      {/* --- Tools --- */}
+      <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-6 mb-20 items-start">
         {skillGroups.map((group) => {
           const isOpen = openGroup === group.id;
 
@@ -199,16 +200,16 @@ export default function Skills() {
                 </div>
               </div>
 
-              <div className={`bg-gray-50 px-8 transition-all duration-700 ease-in-out overflow-hidden ${isOpen ? "max-h-[500px] py-8 opacity-100" : "max-h-0 py-0 opacity-0"}`}>
+              <div className={`bg-gray-50 px-8 transition-all duration-700 ease-in-out overflow-hidden ${isOpen ? "max-h-125 py-8 opacity-100" : "max-h-0 py-0 opacity-0"}`}>
                 <div className="space-y-6">
                   {group.skills.map((skill, index) => (
                     <div key={index}>
                       <div className="flex justify-between mb-2 text-sm font-bold text-gray-600">
                         <span>{skill.name}</span>
-                        <span className="text-caribbean">{skill.level}%</span>
+                        {/* <span className="text-caribbean">{skill.level}%</span> */}
                       </div>
                       <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
-                        <div className="h-full bg-linear-to-r from-caribbean to-sky-blue rounded-full transition-all duration-1000 ease-out" style={{ width: isOpen ? `${skill.level}%` : "0%" }}></div>
+                        <div className="h-full bg-linear-to-r from-orange-peel/60 to-orange-peel rounded-full transition-all duration-1000 ease-out" style={{ width: isOpen ? `${skill.level}%` : "0%" }}></div>
                       </div>
                     </div>
                   ))}
@@ -219,19 +220,19 @@ export default function Skills() {
         })}
       </div>
 
-      {/* --- DIVISOR VISUAL --- */}
+      {/* --- Divisor --- */}
       <div className="w-full max-w-6xl flex items-center gap-4 mb-12">
         <div className="h-px flex-1 bg-white/20"></div>
         <span className="text-sky-blue text-destaque uppercase tracking-widest">Áreas de Atuação</span>
         <div className="h-px flex-1 bg-white/20"></div>
       </div>
 
-      {/* --- PARTE 2: COMPETÊNCIAS (Cards de Texto) --- */}
+      {/* --- Skills --- */}
       <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {competencies.map((comp, index) => (
           <div key={index} className="bg-isabelline/95 p-8 rounded-3xl shadow-lg hover:-translate-y-2 transition-transform duration-300">
             <div className="flex items-center gap-3 mb-6">
-              <div className="p-3 bg-caribbean/10 rounded-xl">
+              <div className="p-3 bg-caribbean/10 rounded-xl ">
                 {comp.icon}
               </div>
               <h3 className="text-lg font-bold text-caribbean font-k2d leading-tight">
