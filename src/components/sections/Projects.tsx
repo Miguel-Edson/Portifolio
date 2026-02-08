@@ -50,19 +50,18 @@ export default function Projects() {
   return (
     <section id="projetos" className="w-full py-20 bg-isabelline flex flex-col items-center justify-center overflow-hidden relative">
       
-      {/* Header */}
-      <div className="w-full max-w-6xl mb-8 flex flex-col md:flex-row justify-between items-start md:items-end">
-        <div >
+      {/* Header - Adicionei px-6 */}
+      <div className="w-full max-w-6xl px-6 mb-8 flex flex-col md:flex-row justify-between items-start md:items-end">
+        <div>
           <h2 className="text-titulo text-caribbean font-medium">Projetos</h2>
           <p className="text-paragrafo text-caribbean mt-4 max-w-6xl">
             Um compilado da minha trajetória na Engenharia de Computação. Projetos que vão desde desafios acadêmicos e pesquisa até soluções reais desenvolvidas para o mercado.
-        </p>
+          </p>
         </div>
-        
       </div>
 
-      {/* Navigation */}
-      <div className="w-full max-w-6xl justify-end flex pb-4">
+      {/* Navigation - Adicionei px-6 */}
+      <div className="w-full max-w-6xl px-6 justify-end flex pb-4">
         {totalPages > 1 && (
           <div className="flex gap-2">
             <button onClick={prevPage} disabled={currentPage === 0} className="p-3 rounded-full border border-caribbean text-caribbean disabled:opacity-30 hover:bg-caribbean hover:text-white transition-colors z-10">
@@ -75,8 +74,8 @@ export default function Projects() {
         )}
       </div>
 
-      {/* Cards */}
-      <div className="w-full max-w-6xl  h-auto md:h-125 overflow-hidden relative">
+      {/* Cards - Adicionei px-6 */}
+      <div className="w-full max-w-6xl px-6 h-auto md:h-125 overflow-hidden relative">
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={currentPage}
@@ -109,7 +108,7 @@ export default function Projects() {
         />
       )}
 
-      {/* Pagination*/}
+      {/* Pagination */}
       <div className="flex gap-2 mt-8">
         {Array.from({ length: totalPages }).map((_, idx) => (
           <button
