@@ -40,7 +40,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           <X size={24} />
         </button>
 
-        {/* Lado Esquerdo: Imagem */}
+        {/* Left */}
         <div className="relative w-full md:w-2/5 h-64 md:h-auto bg-gray-100 shrink-0">
           <Image
             src={project.image}
@@ -48,7 +48,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             fill
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6 md:p-8">
+          <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6 md:p-8">
             <span className="text-white/90 text-sm font-medium tracking-widest uppercase mb-2">
               {project.category}
             </span>
@@ -58,24 +58,20 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           </div>
         </div>
 
-        {/* Lado Direito: Informações */}
+        {/* RIght */}
         <div className="flex-1 p-6 md:p-12 flex flex-col gap-6 text-caribbean">
           
-          {/* Meu Papel */}
+          {/* My role*/}
           <div>
             <h4 className="text-sm font-bold uppercase text-gray-400 mb-1">Meu Papel</h4>
             <p className="text-xl font-medium">{project.role}</p>
           </div>
           
-          {/* --- ÁREA DE SCROLL DO TEXTO --- */}
+          {/* --- Scroll area --- */}
           <div>
             <h4 className="text-sm font-bold uppercase text-gray-400 mb-2">Sobre o Projeto</h4>
             
-            {/* max-h-[160px]: Altura fixa (aprox 6 linhas)
-                overflow-y-auto: Barra de rolagem se passar disso
-                pr-2: Espaço para o texto não colar na barra
-            */}
-            <div className="max-h-[160px] overflow-y-auto pr-4 custom-scrollbar">
+            <div className="max-h-40 overflow-y-auto pr-4 custom-scrollbar">
               <p className="text-lg leading-relaxed text-gray-700">
                 {project.fullDescription}
               </p>
