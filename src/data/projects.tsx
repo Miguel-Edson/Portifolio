@@ -56,8 +56,8 @@ export const projects: Project[] = [
   {
     id: 3,
     title: "Loading Jr.",
-    category: "Liderança & Engenharia", // Mudei para destacar os dois lados
-    role: "Ex-Diretor de Marketing | Eng. de Projetos", // Deixa claro a trajetória
+    category: "Liderança & Engenharia", 
+    role: "Ex-Diretor de Marketing | Eng. de Projetos",
     skills: ["Liderança", "Estratégia de Vendas", "C/C++", "IoT", "Front-end"],
     description: "Da gestão estratégica ao desenvolvimento de sistemas embarcados.",
     fullDescription: "Minha jornada na Loading Jr. reflete minha evolução profissional. Como Diretor de Marketing e Vendas, desenvolvi uma visão estratégica de negócios, liderando equipes, negociando contratos e entendendo as dores reais dos clientes. Hoje, aplico essa bagagem no setor de Projetos, onde atuo tecnicamente como Desenvolvedor Front-end e Engenheiro de Sistemas Embarcados (IoT/Firmware). Essa transição me permite criar códigos e soluções que não são apenas tecnicamente sólidos, mas que entregam valor real e estratégico para o mercado.",

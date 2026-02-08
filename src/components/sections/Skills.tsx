@@ -9,12 +9,12 @@ import {
   GitBranch, 
   Globe,
   ChevronDown,
-  Briefcase, // Ícone novo para a seção de Atuação
-  BookOpen,  // Ícone para Pesquisa/Ensino
-  Users      // Ícone para Liderança
+  Briefcase,
+  BookOpen,  
+  Users      
 } from "lucide-react"; 
 
-// --- PARTE 1: FERRAMENTAS (Accordions) ---
+// Tools 
 const skillGroups = [
   {
     id: "programming",
@@ -60,12 +60,11 @@ const skillGroups = [
       { name: "Figma", level: 90 },
       { name: "Canva", level: 90 },
       { name: "Photoshop", level: 60 },
-      { name: "Behance", level: 75 },
     ]
   },
   {
     id: "tools",
-    title: "Outros & Versionamento",
+    title: "Versionamento",
     icon: <GitBranch size={32} />,
     description: "Ferramentas essenciais para fluxo de trabalho.",
     skills: [
@@ -156,9 +155,6 @@ export default function Skills() {
       
       {/* --- Header --- */}
       <div className="w-full max-w-6xl mb-12 text-center md:text-left">
-        <span className="text-complemento text-isabelline block">
-          / Competências
-        </span>
         <h2 className="text-titulo text-isabelline">
           Habilidades & Stack
         </h2>

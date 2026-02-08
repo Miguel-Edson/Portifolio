@@ -53,9 +53,12 @@ export default function Projects() {
       {/* Header */}
       <div className="w-full max-w-6xl mb-8 flex flex-col md:flex-row justify-between items-start md:items-end">
         <div >
-          <span className="text-complemento text-caribbean block mb-2">/ Desenvolvimento</span>
           <h2 className="text-titulo text-caribbean font-medium">Projetos</h2>
+          <p className="text-paragrafo text-caribbean mt-4 max-w-6xl">
+            Um compilado da minha trajetória na Engenharia de Computação. Projetos que vão desde desafios acadêmicos e pesquisa até soluções reais desenvolvidas para o mercado.
+        </p>
         </div>
+        
       </div>
 
       {/* Navigation */}

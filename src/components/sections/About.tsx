@@ -16,7 +16,7 @@ export default function About() {
         <div className="flex flex-col gap-6 order-2 md:order-1 text-white ">
           <div>
             <span className="text-complemento block">
-              / Sobre Mim
+            Sobre Mim
             </span>
             <h2 className="text-titulo font-medium">
               Miguel Lima

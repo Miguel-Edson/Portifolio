@@ -82,9 +82,6 @@ export default function Contact() {
         
         {/* Header */}
         <div className="mb-12 text-left">
-          <span className="text-complemento text-caribbean block">
-            / Contato
-          </span>
           <h2 className="text-titulo text-caribbean mb-4">
             Vamos conversar?
           </h2>
