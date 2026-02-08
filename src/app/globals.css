@@ -125,3 +125,22 @@ html {
     box-shadow: 15vw 5vh 0px, 35vw 25vh 0px, 55vw 45vh 0px, 75vw 65vh 0px, 95vw 85vh 0px;
     animation: rain-fall 3.5s linear infinite;
 }
+
+/* Custom Scrollbar  */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #82C0CC; 
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #16697A; 
+}

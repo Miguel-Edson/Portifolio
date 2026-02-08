@@ -94,12 +94,11 @@ export const projects: Project[] = [
   {
     id: 5,
     title: "Loading Jr.",
-    category: "Empresa Júnior",
-    role: "Dev. de Sistemas Embarcados",
-    skills: ["C/C++", "ESP32", "IoT", "Gestão Ágil", "Liderança"],
-    description: "Desenvolvimento de soluções digitais e vivência empresarial.",
-    fullDescription:
-      "Atualmente, atuo no setor de Projetos desenvolvendo soluções de sistemas embarcados e IoT, focando em prototipagem eletrônica e firmware. Minha trajetória na empresa é híbrida: anteriormente, fui Diretor de Marketing, onde liderei estratégias de marca e vendas, o que me deu uma visão clara de como conectar a tecnologia às necessidades reais do mercado.",
+    category: "Liderança & Engenharia", // Mudei para destacar os dois lados
+    role: "Ex-Diretor de Marketing | Eng. de Projetos", // Deixa claro a trajetória
+    skills: ["Liderança", "Estratégia de Vendas", "C/C++", "IoT", "Front-end"],
+    description: "Da gestão estratégica ao desenvolvimento de sistemas embarcados.",
+    fullDescription: "Minha jornada na Loading Jr. reflete minha evolução profissional. Como Diretor de Marketing e Vendas, desenvolvi uma visão estratégica de negócios, liderando equipes, negociando contratos e entendendo as dores reais dos clientes. Hoje, aplico essa bagagem no setor de Projetos, onde atuo tecnicamente como Desenvolvedor Front-end e Engenheiro de Sistemas Embarcados (IoT/Firmware). Essa transição me permite criar códigos e soluções que não são apenas tecnicamente sólidos, mas que entregam valor real e estratégico para o mercado.",
     image: "/assets/loading.svg",
     links: [
       { name: "Site", url: "https://loadingjr.com.br/" },
