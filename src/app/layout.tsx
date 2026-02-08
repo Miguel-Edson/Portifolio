@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${k2d.variable} antialiased`}>
-        {/* <Navbar />  */}
+        <Navbar /> 
         {children}
       </body>
     </html>
